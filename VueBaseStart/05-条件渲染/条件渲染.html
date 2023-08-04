@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="../tools/vue.js"></script>
+	</head>
+	<body>
+		<div id="root">
+			<h3 v-show="true">{{name}}</h3>
+			<h3 v-if="false">{{name}}</h3>
+			<br />
+			<h2>当前的n值是:{{ n }}</h2>
+			<button @click="n++">点我n+1</button>
+			<!-- v-else和v-else-if -->
+			<!-- <div v-show="n === 1">Angular</div>
+			<div v-show="n === 2">React</div>
+			<div v-show="n === 3">Vue</div> -->
+
+			<div v-if="n === 1">Angular</div>
+			<div v-else-if="n === 2">React</div>
+			<div v-else-if="n === 3">Vue</div>
+			<div v-else>哈哈</div>
+		</div>
+	</body>
+	<script>
+		const vm = new Vue({
+			el: '#root',
+			data: {
+				name: '埃罗芒阿',
+				n: 0,
+			},
+		})
+	</script>
+</html>

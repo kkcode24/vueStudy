@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="../tools/vue.js"></script>
+	</head>
+	<!-- 
+        作用：向其所在的节点中渲染文本内容 
+        与插值语法的区别：v-text会替换掉节点中的内容，{{xxx}}则不会，更灵活
+     -->
+	<body>
+		<div id="root">
+			<div>姓名：{{name}}</div>
+			<div v-text="name"></div>
+			<div v-text="str"></div>
+		</div>
+	</body>
+	<script>
+		Vue.config.productionTip = false
+		const vm = new Vue({
+			el: '#root',
+			data: {
+				name: '埃罗芒阿',
+				str: '<h3>你好啊！</h3>',
+			},
+		})
+	</script>
+</html>
